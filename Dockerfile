@@ -10,9 +10,10 @@ LABEL io.k8s.description="Virtual Vehicle Authentication Service" \
       io.openshift.expose-services="8587:http" \
       io.openshift.tags="builder,service,authentication" \
       io.openshift.s2i.destination="/opt/s2i/destination"
-      
+     
+RUN mkdir -p /ms 
 #ADD ./src/ /apps/src/
-ADD config /config/
+ADD config /ms/
 ADD ./pom.xml /apps/pom.xml
 ADD ./startAuth.sh /apps/startAuth.sh
 
