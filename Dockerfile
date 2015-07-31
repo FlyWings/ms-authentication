@@ -11,8 +11,8 @@ LABEL io.k8s.description="Virtual Vehicle Authentication Service" \
       io.openshift.tags="builder,service,authentication" \
       io.openshift.s2i.destination="/opt/s2i/destination"
     
-ADD src  /apps/
-ADD config /apps/
+ADD src  /apps/src/
+ADD config /apps/config/
 ADD pom.xml /apps/pom.xml
 ADD startAuth.sh /apps/startAuth.sh
 
