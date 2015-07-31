@@ -13,7 +13,7 @@ LABEL io.k8s.description="Virtual Vehicle Authentication Service" \
 
 WORKDIR /apps
     
-ADD authentication /apps/
+COPY ./authentication/ /apps
 
 RUN chmod -R go+rw /apps && \
 	chmod +x /apps/startAuth.sh
