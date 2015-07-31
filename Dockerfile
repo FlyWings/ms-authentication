@@ -14,8 +14,8 @@ LABEL io.k8s.description="Virtual Vehicle Authentication Service" \
 RUN mkdir -p /apps/config
 #ADD ./src/ /apps/src/
 #ADD config/ /apps/config/
-ADD ./pom.xml /apps/pom.xml
-ADD ./startAuth.sh /apps/startAuth.sh
+ADD pom.xml /apps/pom.xml
+ADD startAuth.sh /apps/startAuth.sh
 
 #ADD dependency-reduced-pom.xml /apps/dependency-reduced-pom.xml
 #ADD zip-with-dependencies.xml /apps/zip-with-dependencies.xml
