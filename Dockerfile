@@ -13,6 +13,7 @@ LABEL io.k8s.description="Virtual Vehicle Authentication Service" \
      
 
 COPY ./src/ /apps/src
+COPY ./config/ /apps/config
 #ADD config/ /apps/config/
 #ADD pom.xml /apps/pom.xml
 ADD startAuth.sh /apps/startAuth.sh
