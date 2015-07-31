@@ -11,11 +11,10 @@ LABEL io.k8s.description="Virtual Vehicle Authentication Service" \
       io.openshift.tags="builder,service,authentication" \
       io.openshift.s2i.destination="/opt/s2i/destination"
 
-WORKDIR /apps
-    
-COPY ./authentication/ /apps
+ADD authentication /apps/
 
 RUN chmod -R go+rw /apps && \
 	chmod +x /apps/startAuth.sh
-	
+
+WORKDIR /apps	
 ENTRYPOINT ["/bin/bash", "./startAuth.sh"]
