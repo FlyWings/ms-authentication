@@ -10,15 +10,11 @@ LABEL io.k8s.description="Virtual Vehicle Authentication Service" \
       io.openshift.expose-services="8587:http" \
       io.openshift.tags="builder,service,authentication" \
       io.openshift.s2i.destination="/opt/s2i/destination"
-
-
-    
-
-#ADD config config/
-ADD pom.xml /apps/pom.xml
-ADD startAuth.sh /apps/startAuth.sh
-ADD src/ /apps/src/
-ADD config/ /apps/config/
+      
+ADD ./src/ /apps/src/
+ADD ./config/ /apps/config/
+ADD ./pom.xml /apps/pom.xml
+ADD ./startAuth.sh /apps/startAuth.sh
 
 #ADD dependency-reduced-pom.xml /apps/dependency-reduced-pom.xml
 #ADD zip-with-dependencies.xml /apps/zip-with-dependencies.xml
@@ -29,6 +25,4 @@ WORKDIR /apps
 RUN chmod -R go+rw /apps && \
 	chmod +x /apps/startAuth.sh
 	
-
-
 ENTRYPOINT ["/bin/bash", "./startAuth.sh"]
