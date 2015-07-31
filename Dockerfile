@@ -13,7 +13,6 @@ LABEL io.k8s.description="Virtual Vehicle Authentication Service" \
      
 
 COPY ./src/ /apps/src
-COPY ./config/ /apps/config
 #ADD config/ /apps/config/
 #ADD pom.xml /apps/pom.xml
 ADD startAuth.sh /apps/startAuth.sh
@@ -23,6 +22,7 @@ ADD startAuth.sh /apps/startAuth.sh
 #ADD README.md /apps/README.md
 
 WORKDIR /apps
+COPY ./config/ /apps/config
 #ADD Valet /apps/
 RUN chmod -R go+rw /apps && \
 	chmod +x /apps/startAuth.sh
