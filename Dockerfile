@@ -15,9 +15,10 @@ ADD src  /apps/
 ADD config /apps/
 ADD pom.xml /apps/pom.xml
 ADD startAuth.sh /apps/startAuth.sh
-ADD dependency-reduced-pom.xml /apps/dependency-reduced-pom.xml
-ADD zip-with-dependencies.xml /apps/zip-with-dependencies.xml
-ADD README.md /apps/README.md
+
+#ADD dependency-reduced-pom.xml /apps/dependency-reduced-pom.xml
+#ADD zip-with-dependencies.xml /apps/zip-with-dependencies.xml
+#ADD README.md /apps/README.md
 
 
 #ADD Valet /apps/
